@@ -1,0 +1,1 @@
+DELETE FROM `user` WHERE `uid` = 1;

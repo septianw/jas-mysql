@@ -1,0 +1,1 @@
+INSERT INTO `user` (`uid`, `uname`, `upass`, `contact_contactid`) VALUES (1, "admin", "pass", 1);
