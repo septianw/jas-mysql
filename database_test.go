@@ -32,7 +32,7 @@ var D = types.Dbconf{
 	3306,
 	"asep",
 	"dummypass",
-	"ipoint",
+	"ipointtest",
 }
 
 func TestPingDb(t *testing.T) {
@@ -57,16 +57,16 @@ func TestOpenDb(t *testing.T) {
 	// db.(sql.DB)
 }
 
-func TestSetupDb(t *testing.T) {
-	ok := Database.SetupDb("/home/asep/workspace/go/github.com/septianw/jas-mysql/test/schema", D)
-	if !ok {
-		t.Fail()
-		t.Logf("ok : %+v", ok)
-	}
-}
+// func TestSetupDb(t *testing.T) {
+// 	ok := Database.SetupDb("/home/asep/workspace/go/github.com/septianw/jas-mysql/test", D)
+// 	if !ok {
+// 		t.Fail()
+// 		t.Logf("ok : %+v", ok)
+// 	}
+// }
 
 func TestMigrate(t *testing.T) {
-	ok := Database.Migrate("/home/asep/workspace/go/github.com/septianw/jas-mysql/test/data", D)
+	ok := Database.Migrate("/home/asep/workspace/go/github.com/septianw/jas-mysql/test/schema", D)
 	if !ok {
 		t.Fail()
 		t.Logf("ok : %+v", ok)
