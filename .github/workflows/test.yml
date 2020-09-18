@@ -1,15 +1,15 @@
-name: Go
+name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ workflowtest ]
   pull_request:
-    branches: [ master ]
+    branches: [ workflowtest ]
 
 jobs:
 
   build:
-    name: Build
+    name: Test
     runs-on: ubuntu-latest
     steps:
 
@@ -30,8 +30,10 @@ jobs:
             dep ensure
         fi
 
-    - name: Build
-      run: go build -v .
+#    - name: Build
+#      run: go build -v .
 
     - name: Test
-      run: go test -v .
+      run: |
+        mysql -u root -proot < dbinit.sql
+        go test -v .
