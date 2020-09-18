@@ -19,8 +19,6 @@ package main
 import (
 	"testing"
 
-	// "database/sql"
-	// "path/filepath"
 	"os"
 	"path"
 	"reflect"
@@ -58,14 +56,6 @@ func TestOpenDb(t *testing.T) {
 	}
 	// db.(sql.DB)
 }
-
-// func TestSetupDb(t *testing.T) {
-// 	ok := Database.SetupDb("/home/asep/workspace/go/github.com/septianw/jas-mysql/test", D)
-// 	if !ok {
-// 		t.Fail()
-// 		t.Logf("ok : %+v", ok)
-// 	}
-// }
 
 func TestMigrate(t *testing.T) {
 	pwd, _ := os.Getwd()
