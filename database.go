@@ -18,9 +18,7 @@ package main
 
 import (
 	"database/sql"
-	// "errors"
 	"log"
-	// "path/filepath"
 
 	"fmt"
 
@@ -79,71 +77,8 @@ func (db database) Migrate(location string, d types.Dbconf) bool {
 	}
 	log.Printf("DB version :  %d", version)
 	log.Printf("DB migration succeed :  %v", reval)
-	// // Read migrations from /home/mattes/migrations and connect to a local postgres database.
-	// dsn := fmt.Sprintf("mysql://%s:%s@tcp(%s:%d)/%s", d.User, d.Pass, d.Host, d.Port, d.Database)
-	// fmt.Println(dsn)
-	// m, err := migrate.New("file://"+location, dsn)
-	// if err != nil {
-	// 	log.Fatal("New migration ", err)
-	// 	reval = false
-	// }
-
-	// // Migrate all the way up ...
-
-	// if err := m.Up(); err != nil {
-	// 	v, dirty, e := m.Version()
-	// 	log.Printf("\n version: %+v, dirty: %+v, err: %+v\n", v, dirty, e)
-
-	// 	log.Fatal("Migrating ", err)
-	// 	reval = false
-	// }
-	// v, dirty, err := m.Version()
-	// log.Printf("\n version: %+v, dirty: %+v, err: %+v\n", v, dirty, err)
 
 	return reval
 }
-
-// func (db database) SetupDb(location string, d types.Dbconf) bool {
-// 	return db.Migrate(location, d)
-// fmt.Printf("\n%+v  %+v\n", "file://"+filepath.Join(location, "schema"), d)
-// var reval bool = false
-// migration := &migrate.FileMigrationSource{
-// 	Dir: filepath.Join(location, "schema"),
-// }
-
-// dbase, err := db.OpenDb(d)
-// pak.ErrHandler(err)
-
-// version, err := migrate.Exec(dbase, "mysql", migration, migrate.Up)
-// pak.ErrHandler(err)
-// if err == nil {
-// 	reval = true
-// }
-// log.Printf("DB version :  %d", version)
-
-// return reval
-// fmt.Printf("\n%+v %+v\n", "file://"+filepath.Join(location, "schema"), d)
-// var reval bool = true
-// // Read migrations from /home/mattes/migrations and connect to a local postgres database.
-// dsn := fmt.Sprintf("mysql://%s:%s@tcp(%s:%d)/%s", d.User, d.Pass, d.Host, d.Port, d.Database)
-// fmt.Println(dsn)
-// m, err := migrate.New("file://"+filepath.Join(location, "schema"), dsn)
-// if err != nil {
-// 	log.Fatal(err)
-// 	reval = false
-// }
-
-// // Migrate all the way up ...
-// if err := m.Up(); err != nil {
-// 	v, dirty, e := m.Version()
-// 	log.Printf("\n version: %+v, dirty: %+v, err: %+v\n", v, dirty, e)
-// 	log.Fatal(err)
-// 	reval = false
-// }
-// v, dirty, err := m.Version()
-// log.Printf("\n version: %+v, dirty: %+v, err: %+v\n", v, dirty, err)
-
-// return reval
-// }
 
 var Database database

@@ -1,0 +1,10 @@
+#### Version 0.1.0
+  - Just work
+    First version that just work.
+
+#### Version 1.0.0
+  - Add workflow
+	Add github workflow, to test robustness.
+  - Fix test
+	Previously test run on local, to make it compatible with workflow need some adjustment.
+  - Cleanup code

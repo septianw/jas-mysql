@@ -19,8 +19,8 @@ package main
 import (
 	"testing"
 
-	// "database/sql"
-	// "path/filepath"
+	"os"
+	"path"
 	"reflect"
 
 	"github.com/septianw/jas/types"
@@ -57,16 +57,9 @@ func TestOpenDb(t *testing.T) {
 	// db.(sql.DB)
 }
 
-// func TestSetupDb(t *testing.T) {
-// 	ok := Database.SetupDb("/home/asep/workspace/go/github.com/septianw/jas-mysql/test", D)
-// 	if !ok {
-// 		t.Fail()
-// 		t.Logf("ok : %+v", ok)
-// 	}
-// }
-
 func TestMigrate(t *testing.T) {
-	ok := Database.Migrate("/home/asep/workspace/go/github.com/septianw/jas-mysql/test/schema", D)
+	pwd, _ := os.Getwd()
+	ok := Database.Migrate(path.Join(pwd, "test", "schema"), D)
 	if !ok {
 		t.Fail()
 		t.Logf("ok : %+v", ok)
