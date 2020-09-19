@@ -37,6 +37,6 @@ jobs:
       run: |
         lsb_release -a
         hostnamectl
-        sudo systemctl restart mysql
-        mysql -u root -proot < dbinit.sql
+#        sudo systemctl restart mysql
+#        mysql -u root -proot < dbinit.sql
         go test -v .
